@@ -194,14 +194,6 @@ public class DefaultChatHeadManager<T extends Serializable> implements ChatHeadC
 
     }
 
-//    @Override
-//    public boolean dispatchTouchEvent(MotionEvent ev) {
-//        if (activeArrangement != null) {
-//            activeArrangement.handleRawTouchEvent(ev);
-//        }
-//        return super.dispatchTouchEvent(ev);
-//    }
-
     @Override
     public ChatHead<T> addChatHead(T key, boolean isSticky, boolean animated) {
         ChatHead<T> chatHead = findChatHeadByKey(key);
@@ -491,13 +483,15 @@ public class DefaultChatHeadManager<T extends Serializable> implements ChatHeadC
 
     @Override
     public void removeView(ChatHead<T> chatHead, ViewGroup parent) {
-        viewAdapter.removeView(chatHead.getKey(), chatHead, parent);
+        if(chatHeads.size()>0)
+            viewAdapter.removeView(chatHead.getKey(), chatHead, parent);
     }
 
 
     @Override
     public void detachView(ChatHead<T> chatHead, ViewGroup parent) {
-        viewAdapter.detachView(chatHead.getKey(), chatHead, parent);
+        if(chatHeads.size()>0)
+            viewAdapter.detachView(chatHead.getKey(), chatHead, parent);
     }
 
 
