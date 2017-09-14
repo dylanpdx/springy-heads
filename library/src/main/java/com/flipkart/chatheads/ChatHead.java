@@ -16,6 +16,9 @@ import com.facebook.rebound.SimpleSpringListener;
 import com.facebook.rebound.Spring;
 import com.facebook.rebound.SpringListener;
 import com.facebook.rebound.SpringSystem;
+import com.flipkart.chatheads.arrangement.ChatHeadArrangement;
+import com.flipkart.chatheads.arrangement.MaximizedArrangement;
+import com.flipkart.chatheads.arrangement.MinimizedArrangement;
 import com.flipkart.chatheads.utils.ChatHeadUtils;
 import com.flipkart.chatheads.utils.SpringConfigsHolder;
 
