@@ -199,12 +199,12 @@ public class WindowManagerContainer extends FrameChatHeadContainer {
             layoutParams.flags |= FLAG_NOT_FOCUSABLE; //remove focusability
             layoutParams.flags &= ~FLAG_NOT_TOUCHABLE; //add touch
             layoutParams.flags |= FLAG_NOT_TOUCH_MODAL; //add touch
-            windowManager.updateViewLayout(motionCaptureView, layoutParams);
+            if (motionCaptureView != null && motionCaptureView.getWindowToken() != null)
+                windowManager.updateViewLayout(motionCaptureView, layoutParams);
 
             layoutParams = getOrCreateLayoutParamsForContainer(getFrameLayout());
             layoutParams.flags |= FLAG_NOT_FOCUSABLE | FLAG_NOT_TOUCHABLE;
-            if (motionCaptureView != null && motionCaptureView.getWindowToken() != null)
-                windowManager.updateViewLayout(getFrameLayout(), layoutParams);
+            windowManager.updateViewLayout(getFrameLayout(), layoutParams);
         }
     }
 
